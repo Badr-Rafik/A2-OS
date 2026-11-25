@@ -164,7 +164,7 @@ java SchedulerGUI cli
 
 **CS241: Operating Systems - 1 · Faculty of Computers and Artificial Intelligence, Cairo University**
 
-*Member 1 · Member 2 · Member 3 · Member 4*
+*Kareem · Badr · Adham · Abdelrahman*
 
 </div>
 
