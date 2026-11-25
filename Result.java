@@ -1,9 +1,8 @@
 import java.util.*;
 
-/** Output of one simulation: one row per time unit + the finished processes. */
 class Result {
     List<Proc> procs;
-    List<String[]> rows = new ArrayList<>();   // {time, cpu, tier1, tier2}
+    List<String[]> rows = new ArrayList<>();   
 
     Result(List<Proc> p) { procs = p; }
 
@@ -11,7 +10,7 @@ class Result {
     double avgTAT() { return procs.stream().mapToInt(Proc::tat).average().orElse(0); }
     double avgRT()  { return procs.stream().mapToInt(Proc::rt).average().orElse(0); }
 
-    /** Console output: step table, per-process metrics and averages. */
+    
     static void print(Result r) {
         for (String[] w : r.rows) System.out.printf("%-4s %-8s %s | %s%n", w[0], w[1], w[2], w[3]);
         System.out.printf("%n%-8s %-8s %-8s %-11s %-8s %-9s%n", "Process", "Arrival", "Finish", "Turnaround", "Waiting", "Response");

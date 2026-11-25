@@ -9,7 +9,7 @@ class SJFScheduler {
         int idx = 0, done = 0, csLeft = 0; boolean skip = false;
         for (int t = 0; done < ps.size(); t++) {
             while (idx < ps.size() && ps.get(idx).arrival <= t) ready.add(ps.get(idx++));
-            if (csLeft == 0 && !skip) {                       // choose who should run now
+            if (csLeft == 0 && !skip) {                       
                 Proc best = null;
                 for (Proc p : ready)
                     if (best == null || p.remaining < best.remaining || (p.remaining == best.remaining && p == cur)) best = p;
@@ -30,7 +30,7 @@ class SJFScheduler {
                 if (--cur.remaining == 0) { cur.finish = t + 1; ready.remove(cur); cur = null; done++; }
             }
         }
-        r.rows.add(new String[]{"" + r.rows.size(), "Done", "Ready: [Empty]", "-"});   // final row
+        r.rows.add(new String[]{"" + r.rows.size(), "Done", "Ready: [Empty]", "-"});
         return r;
     }
 }
